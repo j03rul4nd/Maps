@@ -1,5 +1,6 @@
 class StatusMap {
-
+    isVisible = true;
+    id = "StatusMap";
     constructor(){
         if(ManagerConstants.setStatusMapInit == false){
             this.#Init();
@@ -8,11 +9,19 @@ class StatusMap {
     };
 
     #Init(){
-        document.getElementById("StatusMap").innerHTML = this.ComponentHtml();
+        document.getElementById(this.id).innerHTML = this.ComponentHtml();
         this.InitTemp();
         this.IniteIconTemp();
         return this;
     };
+    Show(){
+        this.isVisible = true;
+        $("#"+this.id).css("display","flex");
+    }
+    Hide(){
+        this.isVisible = false;
+        $("#"+this.id).css("display", "none");
+    }
     ComponentHtml(){
         return `
         <div id="IconTemp"></div>

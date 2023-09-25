@@ -29,7 +29,7 @@ class UIControllers {
             </div>
         `;
     };
-    GetMyLocation(){
+    GetMyLocation(getContextPopUp){
         navigator.geolocation.getCurrentPosition((position) => {
             const lat = position.coords.latitude;
             const lng = position.coords.longitude;
@@ -40,8 +40,10 @@ class UIControllers {
             // Establece las nuevas coordenadas del marcador y agrégalo al mapa
             this.marker.setLatLng([lat, lng]).addTo(this.map);
         
-            // Puedes agregar un mensaje emergente al marcador si lo deseas
-            this.marker.bindPopup('¡Tu ubicación actual!').openPopup();
+            if(getContextPopUp){
+                // Puedes agregar un mensaje emergente al marcador si lo deseas
+                this.marker.bindPopup(getContextPopUp).openPopup();
+            }
         });
     };
     mapGenerator(){
@@ -54,7 +56,9 @@ class UIControllers {
         // Declara el marcador, pero no lo añade al mapa todavía
         this.marker = L.marker([0, 0]);
         
-        this.GetMyLocation();
+        //marker location user
+        let msgPopUp = '¡Tu ubicación actual!';
+        this.GetMyLocation(msgPopUp);
 
        // this.blockMapp();
     };

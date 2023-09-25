@@ -26,7 +26,7 @@ class ChangeMap {
     InitModal(){
         let _me = this;
         $("#header-close-btn").on("click", function() {
-            _me.hide();
+            _me.Hide();
         });
 
         // change map provider
@@ -92,31 +92,36 @@ class ChangeMap {
     };
     statusModal(isVisible){
         if(isVisible){
-            this.hide();
+            this.Hide();
         }else{
-            this.show();
+            this.Show();
         }
         let s = this.isVisible;
         console.log("estado actual del popup "+s);
     };
-    hide(){
+    Hide(){
         this.isVisible = false;
-        controller.mapController.isVisible = this.isVisible;
+        controller.mapController.changerMap.isVisible = this.isVisible;
         $("#modal-changerMap").css("display", "none");
        
     };
-    show(){
+    Show(){
         this.isVisible = true;
-        controller.mapController.isVisible = this.isVisible;
+        controller.mapController.changerMap.isVisible = this.isVisible;
         $("#modal-changerMap").css("display", "flex");
         
     };
     changeMapProvider(mapProvider) {
         $(".modal-CardMap").removeClass("modal-selected");
         // Elimina la capa de mapa actual
-        // this.map.eachLayer((layer) => {
-        //     this.map.removeLayer(layer);
-        // });
+        this.map.eachLayer((layer) => {
+            this.map.removeLayer(layer);
+        });
+
+        if(ManagerConstants.setChangeMapInit === true) {
+            controller.GetMyLocation();
+        }
+
 
         switch (mapProvider) {
             case "GoogleMap":

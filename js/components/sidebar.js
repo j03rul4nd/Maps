@@ -180,7 +180,7 @@ class Sidebar {
 //             placeholder: "Value",
 //         })
 //         $("#iconcloseFacePlate").on("click", function (){
-//             _me.hide();
+//             _me.Hide();
 //         })
 
 //         $("#UpActionFaceplate").on("click", function () {
@@ -214,10 +214,10 @@ class Sidebar {
 
 //         document.documentElement.style.setProperty("--Default-FacePlate", "none");
 //     };
-//     show(){
+//     Show(){
 //         document.documentElement.style.setProperty("--Default-FacePlate", "flex");
 //         this.isVisible = true; 
-//         uiControl.pad.hide(true);
+//         uiControl.pad.Hide(true);
 //         uiControl.btnUpMap.ResponsiveBTNGrid();
 
 //         if (panelGrid == undefined) {
@@ -239,18 +239,18 @@ class Sidebar {
 
 
 //     };
-//     hide(){
+//     Hide(){
 //         document.documentElement.style.setProperty("--Default-FacePlate", "none");
 //         this.isVisible = false; 
 //         if(uiControl.pad){
 //             let z = uiControl.pad.isVisible;
 //             if(z && z == true){
-//                 uiControl.pad.show();
+//                 uiControl.pad.Show();
 //             }
 //             else if(z && z == false){
-//                 uiControl.pad.hide(true);
+//                 uiControl.pad.Hide(true);
 //             }else {
-//                 uiControl.pad.hide(true);
+//                 uiControl.pad.Hide(true);
 //             }
 //         }
 //     };
