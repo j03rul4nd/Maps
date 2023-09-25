@@ -274,6 +274,12 @@ input#inputSearch {
 #img-googlemap {
     background-image: url(../images/Posters/GoogleMaps.png);
 }
+#img-Transportemap {
+    background-image: url(../images/Posters/TransporteMaps.png);
+}
+#img-googleSatelital {
+    background-image: url(../images/Posters/StateliteMaps.png);
+}
 .modal-titleCardMap {
     font-size: 14px;
     padding-left: 5px;
