@@ -29,16 +29,7 @@ class UIControllers {
             </div>
         `;
     };
-    mapGenerator(){
-        L.DomUtil.disableTextSelection();        
-        this.map = L.map('map', {attributionControl: false}).setView([0, 0], 13); // Crea un mapa con una vista inicial en coordenadas [0, 0] y un zoom de 13.
-        
-        // Agrega una capa de mapa base de OpenStreetMap
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(this.map);
-        
-        // Declara el marcador, pero no lo añade al mapa todavía
-        this.marker = L.marker([0, 0]);
-        
+    GetMyLocation(){
         navigator.geolocation.getCurrentPosition((position) => {
             const lat = position.coords.latitude;
             const lng = position.coords.longitude;
@@ -52,6 +43,18 @@ class UIControllers {
             // Puedes agregar un mensaje emergente al marcador si lo deseas
             this.marker.bindPopup('¡Tu ubicación actual!').openPopup();
         });
+    };
+    mapGenerator(){
+        L.DomUtil.disableTextSelection();        
+        this.map = L.map('map', {attributionControl: false}).setView([0, 0], 13); // Crea un mapa con una vista inicial en coordenadas [0, 0] y un zoom de 13.
+        
+        // Agrega una capa de mapa base de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(this.map);
+        
+        // Declara el marcador, pero no lo añade al mapa todavía
+        this.marker = L.marker([0, 0]);
+        
+        this.GetMyLocation();
 
        // this.blockMapp();
     };

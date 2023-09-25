@@ -12,6 +12,7 @@ class MyUbi {
         
         $("#MyUbi").on("click", function(){
             if(controller.marker ){
+                controller.GetMyLocation();
                 controller.map.setView(controller.marker.getLatLng(), 15);
             }
         })
