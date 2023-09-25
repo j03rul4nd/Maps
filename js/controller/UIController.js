@@ -52,9 +52,20 @@ class UIControllers {
         
         // Agrega una capa de mapa base de OpenStreetMap
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(this.map);
+
+
+        var greenIcon = L.icon({
+            iconUrl: './images/icons/markerUbi.svg',
+        
+            iconSize:     [48, 48], // size of the icon
+            iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
+           
+            popupAnchor:  [0, -7] // point from which the popup should open relative to the iconAnchor
+        });
+        
         
         // Declara el marcador, pero no lo añade al mapa todavía
-        this.marker = L.marker([0, 0]);
+        this.marker = L.marker([51.5, -0.09], {icon: greenIcon});
         
         //marker location user
         let msgPopUp = '¡Tu ubicación actual!';
