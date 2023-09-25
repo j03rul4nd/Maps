@@ -160,7 +160,7 @@ class ChangeMap {
         noWrap: true
     });
     // googlemaps streets
-    #googlestreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+    #googlestreets = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
         name: 'GoogleStreets',
         isMapProvider: true,
         maxZoom: 24,
@@ -168,7 +168,7 @@ class ChangeMap {
         noWrap: true
     });
     // googlemaps Hybrid
-    #googlehybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+    #googlehybrid = L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
         name: 'GoogleHybrid',
         isMapProvider: true,
         maxZoom: 20,
@@ -176,7 +176,7 @@ class ChangeMap {
         noWrap: true
     });
     // googlemaps Satellite
-    #googlesat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+    #googlesat = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
         name: 'GoogleSat',
         isMapProvider: true,
         maxZoom: 20,
@@ -184,7 +184,7 @@ class ChangeMap {
         noWrap: true
     });
     // googlemaps Terrain
-    #googleterrain = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+    #googleterrain = L.tileLayer('https://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
         name: 'GoogleTerrain',
         isMapProvider: true,
         maxZoom: 20,
@@ -192,7 +192,7 @@ class ChangeMap {
         noWrap: true
     });
     // BingMap
-    #bingmap = L.tileLayer('http://ecn.t{s}.tiles.virtualearth.net/tiles/r{hash}.png?g=875&mkt=en-us&lbl=l1&stl=h&shading=hill&n=z', {
+    #bingmap = L.tileLayer('https://ecn.t{s}.tiles.virtualearth.net/tiles/r{hash}.png?g=875&mkt=en-us&lbl=l1&stl=h&shading=hill&n=z', {
         name: 'BingMap',
         // Fix L.Util.template to use this
         hash: function (data) {
@@ -217,7 +217,7 @@ class ChangeMap {
         noWrap: true
     });
     // BingHybridMap
-    #binghybridmap = L.tileLayer('http://ecn.t{s}.tiles.virtualearth.net/tiles/h{hash}.jpeg?g=875&mkt=en-us&n=z', {
+    #binghybridmap = L.tileLayer('https://ecn.t{s}.tiles.virtualearth.net/tiles/h{hash}.jpeg?g=875&mkt=en-us&n=z', {
         name: 'BingHybridMap',
         // Fix L.Util.template to use this
         hash: function (data) {
@@ -242,7 +242,7 @@ class ChangeMap {
         noWrap: true
     });
     //BingSatelliteMap
-    #bingsatellitemap = L.tileLayer('http://ecn.t{s}.tiles.virtualearth.net/tiles/a{hash}.jpeg?g=875&mkt=en-us&n=z', {
+    #bingsatellitemap = L.tileLayer('https://ecn.t{s}.tiles.virtualearth.net/tiles/a{hash}.jpeg?g=875&mkt=en-us&n=z', {
         name: 'BingSatelliteMap',
         // Fix L.Util.template to use this
         hash: function (data) {
@@ -267,7 +267,7 @@ class ChangeMap {
         noWrap: true
     });
     // wikimapia
-    #wikimapia = L.tileLayer('http://{s}{hash}.wikimapia.org/?x={x}&y={y}&zoom={z}&r=7071412&type=&lng=1', {
+    #wikimapia = L.tileLayer('https://{s}{hash}.wikimapia.org/?x={x}&y={y}&zoom={z}&r=7071412&type=&lng=1', {
         name: 'wikimapia',
         // Fix L.Util.template to use this
         hash: function (data) {
