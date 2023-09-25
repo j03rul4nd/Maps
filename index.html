@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps | joel </title>
+     <link rel="icon" type="image/png" sizes="48x48" href="./images/logo.png" > 
+    <!-- #region lib -->
+        <!-- map leaftlet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>    
+
+       
+        <!-- jquery -->
+        <script type="text/javascript" src = "./lib/jquery/jquery.min.js"></script>
+        
+    <!-- #endregion lib -->
+
+    <!-- #region style -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- #endregion style -->
+    <!-- #region components -->
+    <script type="text/javascript" src = "./js/controller/constants.js"></script>
+
+    <script type="text/javascript" src = "./js/components/map/ChangeMap.js"></script>
+    <script type="text/javascript" src = "./js/components/map/myUbi.js"></script>
+    <script type="text/javascript" src = "./js/components/map/statusMap.js"></script>
+    <script type="text/javascript" src = "./js/components/map/view3dMap.js"></script>
+
+    <script type="text/javascript" src = "./js/components/MapController.js"></script>
+
+    <script type="text/javascript" src = "./js/components/sidebar/search.js"></script>
+    <script type="text/javascript" src = "./js/components/sidebar/userProfile.js"></script>
+    <script type="text/javascript" src = "./js/components/sidebar/recentsItems.js"></script>
+    <script type="text/javascript" src = "./js/components/sidebar/favItems.js"></script>
+    <script type="text/javascript" src = "./js/components/sidebar/myTravels.js"></script>
+    <script type="text/javascript" src = "./js/components/sidebar/shareUbi.js"></script>
+    <script type="text/javascript" src = "./js/components/sidebar/MarkerMyUbi.js"></script>
+    <script type="text/javascript" src = "./js/components/sidebar/SendError.js"></script>
+    <script type="text/javascript" src = "./js/components/sidebar/splitter.js"></script>
+
+    <script type="text/javascript" src = "./js/components/sidebar.js"></script>
+
+    <!-- #endregion components -->  
+    <!-- #region controllers -->
+    <script type="text/javascript" src = "./js/controller/ManagerConstants.js"></script>
+    <script type="text/javascript" src = "./js/controller/UIController.js"></script>
+    <!-- #endregion controllers -->
+
+</head>
+<body>
+    <div id="main">
+    </div>
+</body>
+<!-- main -->
+<script src="./js/main.js"></script>
+</html>

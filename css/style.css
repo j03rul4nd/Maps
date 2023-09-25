@@ -1,0 +1,287 @@
+html{
+    overflow: hidden;
+}
+body {
+    overflow: hidden;
+    margin: 0;
+    background: #ffffff;
+}
+#map {
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+}
+.leaflet-control-zoom.leaflet-bar.leaflet-control {
+    display: none;
+}
+.leaflet-control-attribution.leaflet-control {
+    display: none;
+}
+#conatin {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    pointer-events: none;
+}
+#controller {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#sidebar {
+    cursor: grab;
+    pointer-events: all;
+    background: white;
+    bottom: -315px;
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    border-top-left-radius: 55px;
+    border-top-right-radius: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* transition: transform 0.3s ease-in-out, bottom 0.3s ease-in-out; */
+    user-select: none;
+    z-index: 1000;
+}
+#sidebar:active {
+    cursor: grabbing;
+}
+#cntr-splitter-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+}
+#splitter-sidebar {
+    background: #cccccc;
+    width: 55px;
+    height: 8px;
+    border-radius: 10px;
+}
+#cntr-SearchUser {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 27px;
+}
+#search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    justify-content: flex-start;
+    background: #EEEEEE;;
+    border-radius: 7px;
+    width: 230px;
+}
+#userProfile {
+    background: #cccccc;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+}
+#sidebar-content {
+    width: 100%;
+    height: 100%;
+}
+img#close {
+    width: 17px;
+    display: none;
+    background: #929292;
+    border-radius: 55px;
+}
+input#inputSearch {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #929292;
+}
+#cntr-map-sec {
+    pointer-events: none;
+    width: 50px;
+    height: 80px;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#ChangeMap {
+    background: #00000082;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding: 5px;
+    pointer-events: all;
+    cursor: pointer;
+}
+#BTN-myUbi {
+    background: #00000082;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    padding: 5px;
+    pointer-events: all;
+    cursor: pointer;
+}
+#cntr-map-sec img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+}
+#cntr-map-main {
+    margin-right: 5px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+#cntr-map-bottom {
+    margin-right: 5px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#View3dMaps {
+    pointer-events: all;
+    background: #00000082;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#IconView3dMaps{
+    width: 38px;
+}
+#StatusMap {
+    background: #00000082;
+    color: #eeeeee;
+    pointer-events: all;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    gap: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+#IconTemp {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-clip: content-box;
+}
+#temp {
+    font-size: 18px;
+}
+#modal-changerMap {
+    pointer-events: all;
+    gap: 10px;
+    height: fit-content;
+    padding-bottom: 10px;
+    width: 100%;
+    position: absolute;
+    z-index: 999999999;
+    bottom: 0;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    display: none;
+    color: white;
+    padding-top: 20px;
+    background-color: #1b3340fa;
+    /* background: linear-gradient(247deg, #00585efa 15.15%, #2e6481fa 63.76%, #688a9d 100%); */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #000000c2;
+}
+#header-close-btn {
+    background-color: #656565;
+    border-radius: 55px;
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    padding: 2px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#header-iconCloseBtn {
+    background-image: url(../images/icons/x-close.svg);
+    width: 25px;
+    height: 25px;
+    /* background-color: #656565; */
+    /* border-radius: 55px; */
+}
+#header-modal-changerMap {
+    width: 89%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+#ctnr-modal-ChangerMap {
+    width: 89%;
+    /* height: 90%; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+.modal-CardMap {
+    background: #9f9f9f5c;
+    display: flex;
+    border-radius: 13px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+#header-titleMapChanger {
+    font-size: 18px;
+}
+.modal-imgCardMap {
+    background-color: #838383;
+    background: linear-gradient(260deg, #777 3.83%, #838383 42.4%, #9b9b9b 100%);
+    width: 100%;
+    height: 94px;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+}
+.modal-titleCardMap {
+    font-size: 14px;
+    padding-left: 5px;
+}
+.modal-selected {
+    box-shadow: 0 0 0 1px #2196F3;
+}
+.modal-bottomCardMap {
+    background: #333d49ab;
+    background: linear-gradient(260deg, #343f54cf 3.83%, #424d63c2 42.4%, #47557185 100%);
+    width: 100%;
+    height: 41px;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+}
