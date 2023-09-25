@@ -29,6 +29,14 @@ class ChangeMap {
             _me.Hide();
         });
 
+        $(".modal-CardMap").on("mousedown", function() {
+            $(this).find(".modal-imgCardMap").addClass("Pres-selected");
+        });
+
+        $(".modal-CardMap").on("mouseup", function() {
+            $(this).find(".modal-imgCardMap").removeClass("Pres-selected");
+        });
+
         // change map provider
         $("#applemap").on("click", function(){
             _me.changeMapProvider("OpenStreetMap");
