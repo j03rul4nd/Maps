@@ -117,6 +117,15 @@ class Sidebar {
         `;
     };
 
+    Show(){
+        this.isVisible = true;
+        $("#sidebar").css("display", "flex");
+    }
+    Hide(){
+        this.isVisible = false;
+        $("#sidebar").css("display", "none");
+    }
+
     toggleSidebar() {
         if (this.isVisible) {
             this.isVisible = false;

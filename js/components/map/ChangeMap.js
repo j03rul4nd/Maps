@@ -103,13 +103,18 @@ class ChangeMap {
         this.isVisible = false;
         controller.mapController.changerMap.isVisible = this.isVisible;
         $("#modal-changerMap").css("display", "none");
+        controller.mapController.view3dMaps.Show();
+        controller.mapController.statusMap.Show();
+        controller.sidebar.Show();
        
     };
     Show(){
         this.isVisible = true;
         controller.mapController.changerMap.isVisible = this.isVisible;
         $("#modal-changerMap").css("display", "flex");
-        
+        controller.mapController.view3dMaps.Hide();
+        controller.mapController.statusMap.Hide();
+        controller.sidebar.Hide();
     };
     changeMapProvider(mapProvider) {
         $(".modal-CardMap").removeClass("modal-selected");
