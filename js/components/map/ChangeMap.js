@@ -114,9 +114,9 @@ class ChangeMap {
     changeMapProvider(mapProvider) {
         $(".modal-CardMap").removeClass("modal-selected");
         // Elimina la capa de mapa actual
-        this.map.eachLayer((layer) => {
-            this.map.removeLayer(layer);
-        });
+        // this.map.eachLayer((layer) => {
+        //     this.map.removeLayer(layer);
+        // });
 
         switch (mapProvider) {
             case "GoogleMap":
