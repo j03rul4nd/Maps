@@ -42,7 +42,7 @@ class ChangeMap {
             console.log("drag disabled map")
         })
 
-        $("#map").on("click", function(){
+        $("#map").on("touchstart touchmove mousedown", function(){
             controller.map.dragging.enable();
             console.log("drag enabled map")
         })
