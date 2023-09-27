@@ -14,6 +14,8 @@ class UIControllers {
         this.mapGenerator();
         this.mapController = new MapController(this.map);
         this.sidebar = new Sidebar();
+
+        
     };
     html(){
         return `
@@ -72,6 +74,8 @@ class UIControllers {
         this.GetMyLocation(msgPopUp);
 
        // this.blockMapp();
+    
+       
     };
 
     blockMapp(){

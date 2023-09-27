@@ -37,6 +37,14 @@ class ChangeMap {
             $(this).find(".modal-imgCardMap").removeClass("Pres-selected");
         });
 
+        $("#modal-changerMap").on("mouseenter", function(){
+            controller.map.dragging.disable();
+        })
+        $("#modal-changerMap").on("mouseleave", function(){
+           controller.map.dragging.enabled();
+        })
+          
+
         // change map provider
         $("#applemap").on("click", function(){
             _me.changeMapProvider("OpenStreetMap");

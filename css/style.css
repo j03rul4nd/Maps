@@ -193,6 +193,7 @@ input#inputSearch {
     font-size: 18px;
 }
 #modal-changerMap {
+    cursor: default;
     pointer-events: all;
     gap: 10px;
     height: fit-content;
