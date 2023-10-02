@@ -1,1 +1,3 @@
-const API_KEY_GOOGLE_MAPS = "";
+class CONFIG{
+    ApiKeyOpenWeatherMap = "";    
+}

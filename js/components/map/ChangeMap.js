@@ -37,7 +37,7 @@ class ChangeMap {
             $(this).find(".modal-imgCardMap").removeClass("Pres-selected");
         });
 
-        $("#modal-changerMap").on("touchstart  mouseenter ", function(){
+        $("#modal-changerMap").on("touchstart touchmove  mouseenter ", function(){
             controller.map.dragging.disable();
             console.log("drag disabled map")
         })
