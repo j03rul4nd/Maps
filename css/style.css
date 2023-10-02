@@ -170,6 +170,8 @@ input#inputSearch {
     width: 38px;
 }
 #StatusMap {
+    user-select: none;
+    pointer-events: none;
     background: #00000082;
     color: #eeeeee;
     pointer-events: all;

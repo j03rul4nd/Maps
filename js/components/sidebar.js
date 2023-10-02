@@ -56,7 +56,10 @@ class Sidebar {
         const sidebarToggle = document.getElementById("splitter-sidebar");
         sidebarToggle.addEventListener("click", this.toggleSidebar.bind(this));
 
- 
+        $("#sidebar").on("click touchstart touchmove  mouseenter ", function(){
+            controller.map.dragging.disable();
+        })
+        
         return this;
     };
     #componentHtml(){
