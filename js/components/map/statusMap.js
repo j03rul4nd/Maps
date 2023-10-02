@@ -91,10 +91,13 @@ class StatusMap {
 
                 // Aquí obtenemos la temperatura actual desde el JSON
                 let temperaturaJSON = data.hourly.temperature_2m;
-                
+
+                // Convertimos el objeto JSON a una cadena
+                let temperaturaJSONString = temperaturaJSON.toString();
+
                 // Divide la cadena en un array de temperaturas
-                let temperaturasArray = temperaturaJSON.split(",");
-                
+                let temperaturasArray = temperaturaJSONString.split(",");
+
                 // La temperatura actual es la primera en la lista (índice 0)
                 let temperaturaActual = parseFloat(temperaturasArray[0]);
 
@@ -109,11 +112,10 @@ class StatusMap {
    * Inicializa el icono de temperatura en el componente.
    */
     #IniteIconTemp(){
-
         let urlTemp = "./images/icons/moon.svg";
 
-        const now = new Date();
-        const hour = now.getHours() + now.getTimezoneOffset() / 60;
+        let now = new Date();
+        let hour = now.getHours();
 
         // Si es de día
         if (hour >= 6 && hour <= 18) {
