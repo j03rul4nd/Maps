@@ -28,6 +28,7 @@ class UIControllers {
                     <div id="sidebar" ></div>
                 </div>
                 <div id="modal-changerMap"></div>
+                <div id="modal-View3dMaps"></div>
             </div>
         `;
     };
