@@ -50,7 +50,70 @@ class View3dMaps {
         $("#Close-View3dMaps").on("click", function(){
             _me.StatusModal(false); 
         })
-    }
+
+    };
+    generateMap3d(){
+        //maperlab
+        var mapl3d = new maplibregl.Map({
+            container: 'maperlab',
+            style:
+                'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL',
+            center: [-87.6298, 41.8781],
+            zoom: 17,
+            bearing: -12,
+            pitch: 60,
+            interactive: true
+        });
+        
+        // pixels the map pans when the up or down arrow is clicked
+        var deltaDistance = 100;
+
+        // degrees the map rotates when the left or right arrow is clicked
+        var deltaDegrees = 25;
+
+        function easing(t) {
+            return t * (2 - t);
+        }
+
+        mapl3d.on('load', () => {
+            mapl3d.getCanvas().focus();
+
+            mapl3d.getCanvas().addEventListener(
+                'keydown',
+                (e) => {
+                    e.preventDefault();
+                    if (e.which === 38) {
+                        // up
+                        mapl3d.panBy([0, -deltaDistance], {
+                            easing
+                        });
+                    } else if (e.which === 40) {
+                        // down
+                        mapl3d.panBy([0, deltaDistance], {
+                            easing
+                        });
+                    } else if (e.which === 37) {
+                        // left
+                        mapl3d.easeTo({
+                            bearing: mapl3d.getBearing() - deltaDegrees,
+                            easing
+                        });
+                    } else if (e.which === 39) {
+                        // right
+                        mapl3d.easeTo({
+                            bearing: mapl3d.getBearing() + deltaDegrees,
+                            easing
+                        });
+                    }
+                },
+                true
+            );
+        });
+
+
+
+
+    };
     StatusModal(status){
         if(typeof status != "undefined"){
             let mode = status;
@@ -69,6 +132,7 @@ class View3dMaps {
     };
     ShowModal(){
         $("#modal-View3dMaps").css("display", "flex");
+        this.generateMap3d();
     };
 
 }

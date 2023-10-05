@@ -223,6 +223,10 @@ div#ModalView3dMaps {
     height: 100%;
     border-radius: 12px;
 }
+#maperlab {
+    border-radius: 12px;
+    height: 100%;
+}
 #bg-ModalView3dMaps {
     width: 90%;
     height: 90%;
