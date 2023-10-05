@@ -1,3 +1,4 @@
 class CONFIG{
-    ApiKeyOpenWeatherMap = "";    
+    ApiKeyOpenWeatherMap = "";   
+    KeyMap = "b2vaX1LpH0ZoVBCMrhNY"; 
 }

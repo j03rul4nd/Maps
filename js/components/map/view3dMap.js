@@ -54,10 +54,10 @@ class View3dMaps {
     };
     generateMap3d(){
         //maperlab
+        let key = config.KeyMap;//get_your_own_OpIi9ZULNHzrESv6T2vL
         var mapl3d = new maplibregl.Map({
             container: 'maperlab',
-            style:
-                'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL',
+            style: `https://api.maptiler.com/maps/streets/style.json?key=${key}`,
             center: [-87.6298, 41.8781],
             zoom: 17,
             bearing: -12,
