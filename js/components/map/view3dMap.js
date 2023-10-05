@@ -31,7 +31,9 @@ class View3dMaps {
     ModalcomponentHtml(){
         return `
         <div id="bg-ModalView3dMaps">        
-            <div id="Map-ModalView3dMaps"></div>
+            <div id="Map-ModalView3dMaps">
+                <div id="maperlab"></div>
+            </div>
             <div id="ModalView3dMaps">
                     <div id="Close-View3dMaps"></div>
             </div>
