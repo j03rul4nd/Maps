@@ -139,6 +139,10 @@ class UIControllers {
             this.map.doubleClickZoom.enable(); 
             this.map.touchZoom.enable(); 
 
+            this.map.boxZoom.enable();
+            this.map.keyboard.enable();
+            if (this.map.tap) this.map.tap.enable();
+
             this.StatusMapDrag = true;
             console.log("drag enabled map");
         }
@@ -155,7 +159,6 @@ class UIControllers {
             this.map.boxZoom.disable();
             this.map.keyboard.disable();
             if (this.map.tap) this.map.tap.disable();
-
 
             this.StatusMapDrag = false;
             console.log("drag disabled map");
