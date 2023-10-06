@@ -1,5 +1,6 @@
 class ChangeMap {
     isVisible = false;
+    isMobile = false;
     map;
     constructor(map){
         if(ManagerConstants.setChangeMapInit == false){
@@ -13,15 +14,27 @@ class ChangeMap {
         document.getElementById("ChangeMap").innerHTML = this.#ComponentControllerHtml();
         document.getElementById("modal-changerMap").innerHTML = this.#ComponentModalHtml();
         
+        _me.StatusMobile();
+
         _me.InitController();
         _me.InitModal();
        
     };
+    StatusMobile(){
+        if ('ontouchstart' in window || navigator.maxTouchPoints) {
+            this.isMobile = true;
+          }
+    }
     InitController(){
         let _me = this;
         $("#ChangeMap").on("touchstart", function(){
             _me.statusModal(_me.isVisible);
         });
+        if(!_me.isMobile){            
+            $("#ChangeMap").on("click", function(){
+                _me.statusModal(_me.isVisible);
+            });
+        }
     };
     InitModal(){
         let _me = this;
@@ -60,7 +73,7 @@ class ChangeMap {
     };
     #blockingMap(){
         //disabled map
-        $("#modal-changerMap").on("touchstart touchmove  mouseenter ", function(){
+        $("#modal-changerMap").on("touchstart touchmove  mouseenter drag", function(){
             controller.StatusDragginMap(false);
         })
     };
@@ -71,7 +84,7 @@ class ChangeMap {
     };
     #ComponentModalHtml(){
         return `
-      
+        <div id="changerMap-ctnr-items">
             <div id="header-modal-changerMap">
                 <div id="header-titleMapChanger">Selecciona un mapa</div>
                 <div id="header-close-btn">
@@ -104,7 +117,7 @@ class ChangeMap {
                     </div>
                 </div>
             </div>
-       
+        </div>
         `
     };
     statusModal(isVisible){

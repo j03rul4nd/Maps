@@ -144,7 +144,7 @@ class View3dMaps {
         controller.StatusView3dMap = true;
     };
     #blockingMap(){
-        $("#"+this.idModal).on("touchstart touchmove  mouseenter mouseover ", function(){
+        $("#"+this.idModal).on("touchstart touchmove  mouseenter mouseover drag", function(){
             controller.StatusDragginMap(false);
         })
 

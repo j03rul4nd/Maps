@@ -135,6 +135,15 @@ class UIControllers {
         if(this.StatusMapDrag != true){
             this.map.dragging.enable();
             this.map.scrollWheelZoom.enable();
+
+            this.map.zoomControl.enable();
+
+            this.map.doubleClickZoom.enable(); 
+            // this.map.zoomSnap.enable(); 
+            // this.map.zoomDelta.enable();  
+            // this.map.trackResize.enable(); 
+            this.map.touchZoom.enable(); 
+
             this.StatusMapDrag = true;
             console.log("drag enabled map");
         }
@@ -143,6 +152,17 @@ class UIControllers {
         if(this.StatusMapDrag){
             this.map.dragging.disable();
             this.map.scrollWheelZoom.disable();
+
+            this.map.zoomControl.disable();
+
+
+            this.map.doubleClickZoom.disable(); 
+            // this.map.zoomSnap.disable(); 
+            // this.map.zoomDelta.disable();  
+            // this.map.trackResize.disable(); 
+            this.map.touchZoom.disable(); 
+
+
             this.StatusMapDrag = false;
             console.log("drag disabled map");
         }

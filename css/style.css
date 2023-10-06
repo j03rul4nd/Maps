@@ -236,26 +236,37 @@ div#ModalView3dMaps {
     /* background-color: #000000c2; */
 }
 #modal-changerMap {
-    cursor: default;
-    pointer-events: all;
-    gap: 10px;
+    
     height: fit-content;
-    padding-bottom: 10px;
     width: 100%;
     position: absolute;
     z-index: 999999999;
     bottom: 0;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
     display: none;
-    color: white;
-    padding-top: 20px;
-    background-color: #1b3340fa;
     /* background: linear-gradient(247deg, #00585efa 15.15%, #2e6481fa 63.76%, #688a9d 100%); */
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+}
+#changerMap-ctnr-items{
+    cursor: default;
+    pointer-events: all;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    color: white;
+    padding-top: 20px;
     background: #000000c2;
+    
+    height: 100%;
+    width: 100%;
+    max-width: 387px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 #header-close-btn {
     background-color: #656565;
