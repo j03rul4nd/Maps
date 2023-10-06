@@ -10,10 +10,10 @@ class View3dMaps {
     };
 
     #Init(){
-        document.getElementById(this.id).innerHTML = this.componentHtml();
-        document.getElementById(this.idModal).innerHTML = this.ModalcomponentHtml();
-        this.setListeners();
-
+        document.getElementById(this.id).innerHTML = this.#componentHtml();
+        document.getElementById(this.idModal).innerHTML = this.#ModalcomponentHtml();
+        this.#setListeners();
+        this.#generateMap3d();
         return this;
     };
     Show(){
@@ -24,12 +24,12 @@ class View3dMaps {
         this.isVisible = false;
         $("#"+this.id).css("display", "none");
     };
-    componentHtml(){
+    #componentHtml(){
         return `
         <img id="IconView3dMaps" src="./images/icons/binoculars.svg" alt="icon binoculars svg" />
         `;
     };
-    ModalcomponentHtml(){
+    #ModalcomponentHtml(){
         return `
         <div id="bg-ModalView3dMaps">        
             <div id="Map-ModalView3dMaps">
@@ -41,7 +41,7 @@ class View3dMaps {
         </div>
         `
     }
-    setListeners(){
+    #setListeners(){
         let _me = this;
         $("#"+this.id).on("click", function(){
             _me.StatusModal(true); 
@@ -56,69 +56,82 @@ class View3dMaps {
         _me.#blockingMap();
 
     };
-    generateMap3d(){
+    #generateMap3d(){
         //maperlab
         let key = config.KeyMap;//get_your_own_OpIi9ZULNHzrESv6T2vL
 
-        var mapl3d = new maplibregl.Map({
-            container: 'maperlab',
-            style: `https://api.maptiler.com/maps/streets/style.json?key=${key}`,
-            center: [-87.6298, 41.8781],
-            zoom: 17,
-            bearing: -12,
-            pitch: 60,
-            interactive: true
-        });
+        function obtenerUbicacion() {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const latitud = position.coords.latitude;
+                    const longitud = position.coords.longitude;
         
-        // pixels the map pans when the up or down arrow is clicked
-        var deltaDistance = 100;
+                    // Crea el mapa y utiliza la ubicación del usuario como centro
+                    var mapl3d = new maplibregl.Map({
+                        container: 'maperlab',
+                        style: `https://api.maptiler.com/maps/streets/style.json?key=${key}`,
+                        center: [longitud, latitud], // Usamos la ubicación del usuario como centro
+                        zoom: 17,
+                        bearing: -12,
+                        pitch: 60,
+                        interactive: true
+                    });
 
-        // degrees the map rotates when the left or right arrow is clicked
-        var deltaDegrees = 25;
+                    // pixels the map pans when the up or down arrow is clicked
+                    var deltaDistance = 100;
 
-        function easing(t) {
-            return t * (2 - t);
-        }
+                    // degrees the map rotates when the left or right arrow is clicked
+                    var deltaDegrees = 25;
 
-        mapl3d.on('load', () => {
-            mapl3d.getCanvas().focus();
-            mapl3d.touchPitch.enable();
-
-            mapl3d.getCanvas().addEventListener( 'keydown',
-                (e) => {
-                    e.preventDefault();
-                    if (e.which === 38) {
-                        // up
-                        mapl3d.panBy([0, -deltaDistance], {
-                            easing
-                        });
-                    } else if (e.which === 40) {
-                        // down
-                        mapl3d.panBy([0, deltaDistance], {
-                            easing
-                        });
-                    } else if (e.which === 37) {
-                        // left
-                        mapl3d.easeTo({
-                            bearing: mapl3d.getBearing() - deltaDegrees,
-                            easing
-                        });
-                    } else if (e.which === 39) {
-                        // right
-                        mapl3d.easeTo({
-                            bearing: mapl3d.getBearing() + deltaDegrees,
-                            easing
-                        });
+                    function easing(t) {
+                        return t * (2 - t);
                     }
-                },
-                true
-            );
-        });
 
+                    mapl3d.on('load', () => {
+                        mapl3d.getCanvas().focus();
+                        mapl3d.touchPitch.enable();
+
+                        mapl3d.getCanvas().addEventListener( 'keydown',
+                            (e) => {
+                                e.preventDefault();
+                                if (e.which === 38) {
+                                    // up
+                                    mapl3d.panBy([0, -deltaDistance], {
+                                        easing
+                                    });
+                                } else if (e.which === 40) {
+                                    // down
+                                    mapl3d.panBy([0, deltaDistance], {
+                                        easing
+                                    });
+                                } else if (e.which === 37) {
+                                    // left
+                                    mapl3d.easeTo({
+                                        bearing: mapl3d.getBearing() - deltaDegrees,
+                                        easing
+                                    });
+                                } else if (e.which === 39) {
+                                    // right
+                                    mapl3d.easeTo({
+                                        bearing: mapl3d.getBearing() + deltaDegrees,
+                                        easing
+                                    });
+                                }
+                            },
+                            true
+                        );
+                    });
+
+                }, function(error) {
+                    console.error("Error al obtener la ubicación del usuario: ", error);
+                });
+            } else {
+                console.error("Geolocalización no está disponible en este navegador.");
+            }
+        }
         
-
-
-
+        // Llama a la función para obtener la ubicación del usuario
+        obtenerUbicacion();
 
     };
     StatusModal(status){
@@ -140,7 +153,7 @@ class View3dMaps {
     };
     ShowModal(){
         $("#modal-View3dMaps").css("display", "flex");
-        this.generateMap3d();
+       
         controller.StatusView3dMap = true;
     };
     #blockingMap(){
