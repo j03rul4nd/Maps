@@ -91,25 +91,25 @@ class Sidebar {
                     <div id="cntr-sidebar">
 
                         <!-- my fav -->
-                        <div id="favItems"></div>
+                        <div class="item-sidebar" id="favItems"></div>
 
                         <!-- recent -->
-                        <div id="recentsItems"></div>
+                        <div class="item-sidebar" id="recentsItems"></div>
 
                         <!-- my travels -->
-                        <div id="myTravels"></div>
+                        <div class="item-sidebar" id="myTravels"></div>
 
                         <!-- cntr tree Options: shared, my markers, error -->
                         <div id="cntr-treeOptions">
 
                             <!-- shared -->
-                            <div id="shareUbi"></div>
+                            <div class="item-sidebar" id="shareUbi"></div>
 
                             <!-- my markers -->
-                            <div id="markerMyUbi"></div>
+                            <div class="item-sidebar" id="markerMyUbi"></div>
 
                             <!-- error -->
-                            <div id="sendError"></div>
+                            <div class="item-sidebar" id="sendError"></div>
 
                         </div>
 
