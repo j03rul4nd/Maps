@@ -348,6 +348,6 @@ div#ModalView3dMaps {
     background-image: url(../images/icons/x-close.svg);
     width: 25px;
     height: 25px;
-    /* background-color: #656565; */
-    /* border-radius: 55px; */
+    background-color: #656565;
+    border-radius: 7px;
 }

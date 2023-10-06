@@ -37,15 +37,7 @@ class ChangeMap {
             $(this).find(".modal-imgCardMap").removeClass("Pres-selected");
         });
 
-        $("#modal-changerMap").on("touchstart touchmove  mouseenter ", function(){
-            controller.map.dragging.disable();
-            console.log("drag disabled map")
-        })
-
-        $("#map").on("touchstart touchmove mousedown", function(){
-            controller.map.dragging.enable();
-            console.log("drag enabled map")
-        })
+        _me.#blockingMap();
           
 
         // change map provider
@@ -65,6 +57,12 @@ class ChangeMap {
         //default map provider
         _me.changeMapProvider("OpenStreetMap");
 
+    };
+    #blockingMap(){
+        //disabled map
+        $("#modal-changerMap").on("touchstart touchmove  mouseenter ", function(){
+            controller.StatusDragginMap(false);
+        })
     };
     #ComponentControllerHtml(){
         return `

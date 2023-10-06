@@ -13,6 +13,7 @@ class View3dMaps {
         document.getElementById(this.id).innerHTML = this.componentHtml();
         document.getElementById(this.idModal).innerHTML = this.ModalcomponentHtml();
         this.setListeners();
+
         return this;
     };
     Show(){
@@ -51,10 +52,14 @@ class View3dMaps {
             _me.StatusModal(false); 
         })
 
+
+        _me.#blockingMap();
+
     };
     generateMap3d(){
         //maperlab
         let key = config.KeyMap;//get_your_own_OpIi9ZULNHzrESv6T2vL
+
         var mapl3d = new maplibregl.Map({
             container: 'maperlab',
             style: `https://api.maptiler.com/maps/streets/style.json?key=${key}`,
@@ -129,10 +134,18 @@ class View3dMaps {
     };
     HideModal(){
         $("#modal-View3dMaps").css("display", "none");
+        controller.StatusView3dMap = false;
     };
     ShowModal(){
         $("#modal-View3dMaps").css("display", "flex");
         this.generateMap3d();
+        controller.StatusView3dMap = true;
+    };
+    #blockingMap(){
+        $("#"+this.idModal).on("touchstart touchmove  mouseenter ", function(){
+            controller.StatusDragginMap(false);
+        })
+
     };
 
 }

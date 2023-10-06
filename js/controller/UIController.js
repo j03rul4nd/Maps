@@ -3,6 +3,8 @@ class UIControllers {
     sidebar;
     marker;
     map;
+    StatusView3dMap = false;
+    StatusMapDrag = true;
     constructor(){
         if(ManagerConstants.setUIControllersInit == false){
             this.#Init();
@@ -10,14 +12,15 @@ class UIControllers {
         }
     };
     #Init(){
-        document.getElementById("main").innerHTML = this.html();
-        this.mapGenerator();
+        document.getElementById("main").innerHTML = this.#html();
+        this.#mapGenerator();
         this.mapController = new MapController(this.map);
         this.sidebar = new Sidebar();
 
+        this.#listennersMap();
         
     };
-    html(){
+    #html(){
         return `
             <div id="map">
                 <div id="conatin">
@@ -49,7 +52,7 @@ class UIControllers {
             }
         });
     };
-    mapGenerator(){
+    #mapGenerator(){
         L.DomUtil.disableTextSelection();        
         this.map = L.map('map', {attributionControl: false}).setView([0, 0], 13); // Crea un mapa con una vista inicial en coordenadas [0, 0] y un zoom de 13.
         
@@ -79,7 +82,7 @@ class UIControllers {
        
     };
 
-    blockMapp(){
+    #blockMapp(){
         // Función para deshabilitar el dragging y el scrollWheelZoom
         function disableMapInteraction() {
             map.dragging.disable();
@@ -103,5 +106,43 @@ class UIControllers {
             element.addEventListener('mouseout', enableMapInteraction);
         });
 
+    };
+
+    #listennersMap(){
+        //enabled map
+        let _me = this;
+        $("#map").on("touchstart touchmove mousedown", function(){
+            _me.StatusDragginMap(true);
+        })
+    }
+
+    StatusDragginMap(status){
+        if(typeof status != "undefined"){
+            let mode = status;
+            if(typeof status == "string"){
+                mode = status.toLowerCase() !== 'true';
+            }
+            let view3dMap = this.StatusView3dMap;
+
+            if(mode == true && view3dMap == false){
+                this.enbledMapDraging();
+            }else if(mode == false){
+                this.disabledMapDraging();
+            }
+        }
+    };
+    enbledMapDraging(){
+        if(this.StatusMapDrag != true){
+            this.map.dragging.enable();
+            this.StatusMapDrag = true;
+            console.log("drag enabled map");
+        }
+    };
+    disabledMapDraging(){
+        if(this.StatusMapDrag){
+            this.map.dragging.disable();
+            this.StatusMapDrag = false;
+            console.log("drag disabled map");
+        }
     };
 }
