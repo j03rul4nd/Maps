@@ -147,6 +147,7 @@ input#inputSearch {
     align-items: center;
     justify-content: center;
     width: 30px;
+    user-select: none;
 }
 #cntr-map-main {
     margin-right: 5px;
@@ -176,6 +177,7 @@ input#inputSearch {
 }
 #IconView3dMaps{
     width: 38px;
+    user-select: none;
 }
 #StatusMap {
     user-select: none;
@@ -258,7 +260,7 @@ div#ModalView3dMaps {
     color: white;
     padding-top: 20px;
     background: #000000c2;
-    
+
     height: 100%;
     width: 100%;
     max-width: 387px;
