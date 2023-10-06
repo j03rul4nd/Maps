@@ -134,6 +134,7 @@ class UIControllers {
     enbledMapDraging(){
         if(this.StatusMapDrag != true){
             this.map.dragging.enable();
+            this.map.scrollWheelZoom.enable();
             this.StatusMapDrag = true;
             console.log("drag enabled map");
         }
@@ -141,6 +142,7 @@ class UIControllers {
     disabledMapDraging(){
         if(this.StatusMapDrag){
             this.map.dragging.disable();
+            this.map.scrollWheelZoom.disable();
             this.StatusMapDrag = false;
             console.log("drag disabled map");
         }

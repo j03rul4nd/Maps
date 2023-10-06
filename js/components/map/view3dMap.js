@@ -82,9 +82,9 @@ class View3dMaps {
 
         mapl3d.on('load', () => {
             mapl3d.getCanvas().focus();
+            mapl3d.touchPitch.enable();
 
-            mapl3d.getCanvas().addEventListener(
-                'keydown',
+            mapl3d.getCanvas().addEventListener( 'keydown',
                 (e) => {
                     e.preventDefault();
                     if (e.which === 38) {
@@ -115,6 +115,8 @@ class View3dMaps {
             );
         });
 
+        
+
 
 
 
@@ -142,7 +144,7 @@ class View3dMaps {
         controller.StatusView3dMap = true;
     };
     #blockingMap(){
-        $("#"+this.idModal).on("touchstart touchmove  mouseenter ", function(){
+        $("#"+this.idModal).on("touchstart touchmove  mouseenter mouseover ", function(){
             controller.StatusDragginMap(false);
         })
 
