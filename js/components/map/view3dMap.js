@@ -13,7 +13,7 @@ class View3dMaps {
         document.getElementById(this.id).innerHTML = this.#componentHtml();
         document.getElementById(this.idModal).innerHTML = this.#ModalcomponentHtml();
         this.#setListeners();
-        this.#generateMap3d();
+        this.#generateMap3d(); 
         return this;
     };
     Show(){
