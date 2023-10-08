@@ -25,6 +25,10 @@ class Search {
             _me.inputSearch.value = ""; // Limpiar el texto del input
             _me.closeIcon.style.display = "none"; 
         });
+        $("#search").on("click", function(){
+            let input = document.getElementById('inputSearch');
+            input.focus();
+        });
 
         return this
     };
