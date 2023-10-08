@@ -18,18 +18,19 @@ class Search {
         $("#inputSearch").on("input", function(){
             _me.searching();
         });
-
+        $("#IconSearch").on("click", function(){
+            _me.getLoaction();
+        });
         $("#close").on("click", function(){
             _me.inputSearch.value = ""; // Limpiar el texto del input
             _me.closeIcon.style.display = "none"; 
         });
 
-        
         return this
     };
     searching(){
         //fetch and databound search = () =>
-
+       
         //btn close
         if (this.inputSearch.value.length > 0) {
             this.closeIcon.style.display = "block";
@@ -45,7 +46,29 @@ class Search {
             <img id="close" src="./images/icons/x-close.svg" alt="icon close search svg" />
         `;
     };
-
+    getLoaction() {
+        let mymap = controller.map; 
+      //var localidad = "Barcelona"; document.getElementById('localidadInput').value;
+      var localidad =  document.getElementById('inputSearch').value;
+      
+      let API_KEY = config.SearchKeyMap;
+      fetch(`https://api.opencagedata.com/geocode/v1/json?q=${localidad}&key=${API_KEY}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.results.length > 0) {
+            var lat = data.results[0].geometry.lat;
+            var lng = data.results[0].geometry.lng;
+            mymap.setView([lat, lng], 13);
+            L.marker([lat, lng]).addTo(mymap)
+              .bindPopup(`<b>${localidad}</b>`).openPopup();
+          } else {
+            alert('Localidad no encontrada');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
 };
 
 
