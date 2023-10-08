@@ -28,6 +28,7 @@ class Search {
         $("#search").on("click", function(){
             let input = document.getElementById('inputSearch');
             input.focus();
+            controller.StatusDragginMap(false);
         });
 
         return this
