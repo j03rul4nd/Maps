@@ -18,6 +18,9 @@ class Search {
         $("#inputSearch").on("input", function(){
             _me.searching();
         });
+        $("#inputSearch").on("keydown", function(event){
+            if (event.which === 13){_me.getLoaction();}
+        });
         $("#IconSearch").on("click", function(){
             _me.getLoaction();
         });
@@ -52,12 +55,13 @@ class Search {
         `;
     };
     getLoaction() {
+        let _me = this;
         let mymap = controller.map; 
       //var localidad = "Barcelona"; document.getElementById('localidadInput').value;
-      var localidad =  document.getElementById('inputSearch').value;
+      var location =  document.getElementById('inputSearch').value;
       
       let API_KEY = config.SearchKeyMap;
-      fetch(`https://api.opencagedata.com/geocode/v1/json?q=${localidad}&key=${API_KEY}`)
+      fetch(`https://api.opencagedata.com/geocode/v1/json?q=${location}&key=${API_KEY}`)
         .then(response => response.json())
         .then(data => {
           if (data.results.length > 0) {
@@ -65,7 +69,9 @@ class Search {
             var lng = data.results[0].geometry.lng;
             mymap.setView([lat, lng], 13);
             L.marker([lat, lng]).addTo(mymap)
-              .bindPopup(`<b>${localidad}</b>`).openPopup();
+              .bindPopup(`<b>${location}</b>`).openPopup();
+
+            _me.addRecentSearch(location, lat, lng );
           } else {
             alert('Localidad no encontrada');
           }
@@ -74,6 +80,38 @@ class Search {
           console.error('Error:', error);
         });
     }
+
+    GenerateRecentSerch(location){
+        return `
+        <div class="recentSearch-item" id="RecentSearch_${location}">
+            <div class="recentSearch-item-marquer">
+                <div class="recentSearch-item-icon"></div>
+            </div>
+            <div class="recentSearch-item-text"> ${location}</div>       
+        </div>`
+    };
+
+    addRecentSearch(location, lat, lng){       
+        let _me = this;
+        let mymap = controller.map; 
+
+        let ContainerRecentSearching = document.getElementById("recentsItems");  
+        let recentItems = ContainerRecentSearching.getElementsByClassName("recentSearch-item");      
+
+        // Si ya hay tres ubicaciones recientes, elimina la última
+        if (recentItems.length >= 3) {
+            ContainerRecentSearching.removeChild(recentItems[recentItems.length - 1]);
+        }
+
+        // Agrega la nueva ubicación reciente en la parte superior
+        ContainerRecentSearching.insertAdjacentHTML("afterbegin", _me.GenerateRecentSerch(location));
+
+        // Agrega el evento click para cambiar la vista del mapa
+        document.querySelector('.recentSearch-item').addEventListener('click', function () {
+            mymap.setView([lat, lng], 13);
+        });
+
+    };
 };
 
 

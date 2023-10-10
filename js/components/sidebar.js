@@ -88,28 +88,39 @@ class Sidebar {
                     </div>
 
                     <!-- content -->
-                    <div id="cntr-sidebar">
+                    <div id="cntr-sidebar">  
+                    
+                        <div id="flexing-cntr-sidebar">
 
-                        <!-- my fav -->
-                        <div class="item-sidebar" id="favItems"></div>
+                            <!-- my fav -->
+                            <div class="item-sidebar" id="favItems">
+                            
+                            </div>
 
-                        <!-- recent -->
-                        <div class="item-sidebar" id="recentsItems"></div>
+                            <!-- recent -->
+                            <div class="item-sidebar" id="cntr-recentsItems">
+                                <div class="label-title-item-sidebar" id="cntr-recentsItems-title">Recientes</div>
+                                <div id="recentsItems"></div>
+                            </div>
 
-                        <!-- my travels -->
-                        <div class="item-sidebar" id="myTravels"></div>
+                            <!-- my travels -->
+                            <div class="item-sidebar" id="myTravels">
+                            
+                            </div>
 
-                        <!-- cntr tree Options: shared, my markers, error -->
-                        <div id="cntr-treeOptions">
+                            <!-- cntr tree Options: shared, my markers, error -->
+                            <div id="cntr-treeOptions">
 
-                            <!-- shared -->
-                            <div class="item-sidebar" id="shareUbi"></div>
+                                <!-- shared -->
+                                <div class="item-sidebar" id="shareUbi"></div>
 
-                            <!-- my markers -->
-                            <div class="item-sidebar" id="markerMyUbi"></div>
+                                <!-- my markers -->
+                                <div class="item-sidebar" id="markerMyUbi"></div>
 
-                            <!-- error -->
-                            <div class="item-sidebar" id="sendError"></div>
+                                <!-- error -->
+                                <div class="item-sidebar" id="sendError"></div>
+
+                            </div>
 
                         </div>
 
