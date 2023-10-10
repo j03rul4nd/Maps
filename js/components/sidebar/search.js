@@ -87,7 +87,12 @@ class Search {
             <div class="recentSearch-item-marquer">
                 <div class="recentSearch-item-icon"></div>
             </div>
-            <div class="recentSearch-item-text"> ${location}</div>       
+            <div class="recentSearch-item-caption">       
+                <div class="recentSearch-item-text" id="locationSelectedRecentSearch_${location}"> ${location}</div>   
+                <div class="recentSearch-item-cntr-interactions"> 
+                        <div class="recentSearch-item-Favorites" id="FavItem_${location}" >o</div>
+                </div>  
+            </div>  
         </div>`
     };
 
@@ -96,7 +101,19 @@ class Search {
         let mymap = controller.map; 
 
         let ContainerRecentSearching = document.getElementById("recentsItems");  
-        let recentItems = ContainerRecentSearching.getElementsByClassName("recentSearch-item");      
+        let recentItems = ContainerRecentSearching.getElementsByClassName("recentSearch-item");     
+        
+        // Verificar si la ubicación ya existe en la lista
+        for (let i = 0; i < recentItems.length; i++) {
+            const item = recentItems[i].querySelector('.recentSearch-item-text');
+            if (item.textContent === location) {
+            // Si la ubicación ya existe, moverla al principio de la lista y actualizar el mapa
+            ContainerRecentSearching.removeChild(recentItems[i]);
+            ContainerRecentSearching.insertAdjacentHTML("afterbegin", _me.GenerateRecentSearch(location));
+            mymap.setView([lat, lng], 13);
+            return;
+            }
+        }
 
         // Si ya hay tres ubicaciones recientes, elimina la última
         if (recentItems.length >= 3) {

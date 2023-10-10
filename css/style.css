@@ -429,6 +429,7 @@ div#ModalView3dMaps {
     height: fit-content;
 }
 .recentSearch-item {
+    cursor: pointer;
     width: 94%;
     height: 45px;
     background: #484848;
@@ -445,16 +446,33 @@ div#ModalView3dMaps {
     flex-direction: row;
 }
 .recentSearch-item-icon{
-    background-image: url(../images/Marker.png);
-    width: 12px;
+    background-image: url(../images/Marker.svg);
+    width: 24px;
     height: 24px;
     background-repeat: no-repeat;
-    background-size: 12px 24px;
+    background-size: 24px 24px;
 }
 .recentSearch-item-marquer {
     background: #7a7a7a;
     border-radius: 25px;
-    padding: 5px;
+    padding: 9px;
     padding-left: 10px;
     padding-right: 10px;
+}
+.recentSearch-item-caption {
+    display: flex;
+    justify-content: space-between;
+    width: 82%;
+    height: 100%;
+    align-items: center;
+    gap: 5px;
+}
+.recentSearch-item-Favorites {
+    width: fit-content;
+    height: fit-content;
+    float: right;
+}
+.recentSearch-item-cntr-interactions {
+    width: 48px;
+    height: 100%;
 }
