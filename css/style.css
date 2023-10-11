@@ -106,7 +106,7 @@ body {
     animation: 1s shine linear infinite;
 
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 12px;
     min-height: 50px;
     visibility: visible;
     display: block;
@@ -129,11 +129,21 @@ body {
 #flexing-cntr-sidebar {
     width: 71%;
     height: 67%;
-
+    margin-top: 6px;
     overflow-y: auto;
 }
 #favItems {
     margin-top: 7px;
+    background: #a7a7a7;
+    border-radius: 5px;
+    padding: 5px;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 96%;
+    height: fit-content;
 }
 #sidebar-content {
     width: 100%;
@@ -420,6 +430,7 @@ div#ModalView3dMaps {
     background: none;
 }
 #recentsItems {
+    margin-top: 7px;
     background: #a7a7a7;
     border-radius: 5px;
     padding: 5px;
@@ -492,4 +503,7 @@ div#ModalView3dMaps {
 .recentSearch-item-cntr-interactions {
     width: 48px;
     height: 100%;
+}
+#cntr-sidebar #cntr-favItems {
+    background: transparent;
 }
