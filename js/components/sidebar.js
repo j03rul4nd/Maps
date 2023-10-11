@@ -93,8 +93,9 @@ class Sidebar {
                         <div id="flexing-cntr-sidebar">
 
                             <!-- my fav -->
-                            <div class="item-sidebar" id="favItems">
-                            
+                            <div class="item-sidebar" id="cntr-favItems">
+                                <div class="label-title-item-sidebar" id="cntr-favItems-title">Favoritos</div>
+                                <div id="favItems"></div>
                             </div>
 
                             <!-- recent -->

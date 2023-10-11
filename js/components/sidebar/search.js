@@ -71,7 +71,7 @@ class Search {
             L.marker([lat, lng]).addTo(mymap)
               .bindPopup(`<b>${location}</b>`).openPopup();
 
-            _me.addRecentSearch(location, lat, lng );
+            controller.sidebar.recentsItems.addRecentSearch(location, lat, lng );
           } else {
             alert('Localidad no encontrada');
           }
@@ -81,54 +81,7 @@ class Search {
         });
     }
 
-    GenerateRecentSerch(location){
-        return `
-        <div class="recentSearch-item" id="RecentSearch_${location}">
-            <div class="recentSearch-item-marquer">
-                <div class="recentSearch-item-icon"></div>
-            </div>
-            <div class="recentSearch-item-caption">       
-                <div class="recentSearch-item-text" id="locationSelectedRecentSearch_${location}"> ${location}</div>   
-                <div class="recentSearch-item-cntr-interactions"> 
-                        <div class="recentSearch-item-Favorites" id="FavItem_${location}" >o</div>
-                </div>  
-            </div>  
-        </div>`
-    };
 
-    addRecentSearch(location, lat, lng){       
-        let _me = this;
-        let mymap = controller.map; 
-
-        let ContainerRecentSearching = document.getElementById("recentsItems");  
-        let recentItems = ContainerRecentSearching.getElementsByClassName("recentSearch-item");     
-        
-        // Verificar si la ubicación ya existe en la lista
-        for (let i = 0; i < recentItems.length; i++) {
-            const item = recentItems[i].querySelector('.recentSearch-item-text');
-            if (item.textContent === location) {
-            // Si la ubicación ya existe, moverla al principio de la lista y actualizar el mapa
-            ContainerRecentSearching.removeChild(recentItems[i]);
-            ContainerRecentSearching.insertAdjacentHTML("afterbegin", _me.GenerateRecentSearch(location));
-            mymap.setView([lat, lng], 13);
-            return;
-            }
-        }
-
-        // Si ya hay tres ubicaciones recientes, elimina la última
-        if (recentItems.length >= 3) {
-            ContainerRecentSearching.removeChild(recentItems[recentItems.length - 1]);
-        }
-
-        // Agrega la nueva ubicación reciente en la parte superior
-        ContainerRecentSearching.insertAdjacentHTML("afterbegin", _me.GenerateRecentSerch(location));
-
-        // Agrega el evento click para cambiar la vista del mapa
-        document.querySelector('.recentSearch-item').addEventListener('click', function () {
-            mymap.setView([lat, lng], 13);
-        });
-
-    };
 };
 
 

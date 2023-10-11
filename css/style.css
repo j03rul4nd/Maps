@@ -2,6 +2,9 @@ html{
     overflow: hidden;
 }
 body {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
     overflow: hidden;
     margin: 0;
     background: #ffffff;
@@ -428,6 +431,7 @@ div#ModalView3dMaps {
     width: 96%;
     height: fit-content;
 }
+.favItems-item,
 .recentSearch-item {
     cursor: pointer;
     width: 94%;
@@ -445,6 +449,7 @@ div#ModalView3dMaps {
     align-items: center;
     flex-direction: row;
 }
+.favItems-item-icon,
 .recentSearch-item-icon{
     background-image: url(../images/Marker.svg);
     width: 24px;
@@ -452,6 +457,7 @@ div#ModalView3dMaps {
     background-repeat: no-repeat;
     background-size: 24px 24px;
 }
+.favItems-item-marquer,
 .recentSearch-item-marquer {
     background: #7a7a7a;
     border-radius: 25px;
@@ -459,6 +465,7 @@ div#ModalView3dMaps {
     padding-left: 10px;
     padding-right: 10px;
 }
+.favItems-item-caption,
 .recentSearch-item-caption {
     display: flex;
     justify-content: space-between;
@@ -467,11 +474,21 @@ div#ModalView3dMaps {
     align-items: center;
     gap: 5px;
 }
+.favItems-item-Favorites,
 .recentSearch-item-Favorites {
     width: fit-content;
     height: fit-content;
     float: right;
+    background-image: url(../images/OutHeart.svg);
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    width: 24px;
+    height: 24px;
 }
+.favItems-item-Favorites{
+    background-image: url(../images/InertHeart.svg);
+}
+.favItems-item-cntr-interactions,
 .recentSearch-item-cntr-interactions {
     width: 48px;
     height: 100%;
