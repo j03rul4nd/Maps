@@ -24,14 +24,14 @@ class MapController {
         return ` 
             <div id="cntr-map-main"> 
                 <div id="cntr-map-sec"> 
-                   <div id="ChangeMap"></div>
-                   <div id="BTN-myUbi"></div>
+                   <div class="btn" id="ChangeMap"></div>
+                   <div class="btn"id="BTN-myUbi"></div>
                 </div>            
             </div>        
  
             <div id="cntr-map-bottom">
-                <div id="View3dMaps"></div>
-                <div id="StatusMap"></div>
+                <div class="btn" id="View3dMaps"></div>
+                <div class="btn" id="StatusMap"></div>
              </div>
         `;
     };
