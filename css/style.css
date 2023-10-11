@@ -20,6 +20,18 @@ body {
 .leaflet-control-attribution.leaflet-control {
     display: none;
 }
+/* Estilos específicos para el scrollbar en dispositivos iOS (WebKit) */
+::-webkit-scrollbar {
+    width: 6px; /* Ancho del scrollbar */
+}
+::-webkit-scrollbar-thumb {
+    background-color: #4a4a4a; /* Color del thumb del scrollbar (barra) */
+    border-radius: 5px;
+    cursor: default;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent; /* Color del track del scrollbar (fondo) */
+}
 #conatin {
     height: 100%;
     width: 100%;
@@ -133,6 +145,7 @@ body {
     height: 126%;
 }
 #flexing-cntr-sidebar {
+    cursor: default;
     width: 76%;
     height: 67%;
     margin-top: 20px;
