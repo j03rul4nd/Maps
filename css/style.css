@@ -522,6 +522,10 @@ div#ModalView3dMaps {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+}
+#cntr-treeOptions .item-sidebar:hover {
+    opacity: 0.8;
 }
 #cntr-sidebar #cntr-myTravels {
     background: none;
