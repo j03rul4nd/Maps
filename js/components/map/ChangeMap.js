@@ -79,7 +79,7 @@ class ChangeMap {
     };
     #ComponentControllerHtml(){
         return `
-        <img id="IconChangeMap" src="./images/icons/map.svg" alt="icon change map provider" />
+        <img id="IconChangeMap" src="./images/icons/map.svg" alt="icon change map provider" draggable="false" />
         `
     };
     #ComponentModalHtml(){

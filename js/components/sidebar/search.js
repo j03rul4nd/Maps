@@ -46,12 +46,12 @@ class Search {
             this.closeIcon.style.display = "none"; 
         }
         return this
-    };
+    }; 
     componentHtml(){
         return `
-            <img id="IconSearch" src="./images/icons/search.svg" alt="icon search svg" />
+            <img class="btn" id="IconSearch" src="./images/icons/search.svg" alt="icon search svg" draggable="false"/>
             <input type="text" placeholder="Buscar en Mapas" id="inputSearch">
-            <img id="close" src="./images/icons/x-close.svg" alt="icon close search svg" />
+            <img class="btn" id="close" src="./images/icons/x-close.svg" alt="icon close search svg" draggable="false" />
         `;
     };
     getLoaction() {

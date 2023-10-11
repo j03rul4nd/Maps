@@ -20,7 +20,7 @@ class MyUbi {
     };
     ComponentHtml(){
         return `
-        <img id="MyUbi" src="./images/icons/map-arrow.svg" alt="icon arrow ubication map provider" />
+        <img id="MyUbi" src="./images/icons/map-arrow.svg" alt="icon arrow ubication map provider" draggable="false" />
         `
     }
 

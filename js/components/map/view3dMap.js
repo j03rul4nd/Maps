@@ -13,7 +13,7 @@ class View3dMaps {
         document.getElementById(this.id).innerHTML = this.#componentHtml();
         document.getElementById(this.idModal).innerHTML = this.#ModalcomponentHtml();
         this.#setListeners();
-        this.#generateMap3d(); 
+        this.#generateMap3d(); // generate
         return this;
     };
     Show(){
@@ -26,7 +26,7 @@ class View3dMaps {
     };
     #componentHtml(){
         return `
-        <img id="IconView3dMaps" src="./images/icons/binoculars.svg" alt="icon binoculars svg" />
+        <img id="IconView3dMaps" src="./images/icons/binoculars.svg" alt="icon binoculars svg" draggable="false"/>
         `;
     };
     #ModalcomponentHtml(){
