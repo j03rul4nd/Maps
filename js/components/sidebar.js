@@ -81,7 +81,7 @@ class Sidebar {
                             <div id="search"></div> 
 
                             <!-- user profile -->
-                            <div id="userProfile"></div>
+                            <div class="btn" id="userProfile"></div>
 
                         </div>
 
@@ -93,19 +93,19 @@ class Sidebar {
                         <div id="flexing-cntr-sidebar">
 
                             <!-- my fav -->
-                            <div class="item-sidebar" id="cntr-favItems">
+                            <div class="item-sidebar " id="cntr-favItems">
                                 <div class="label-title-item-sidebar" id="cntr-favItems-title">Favoritos</div>
                                 <div id="favItems"></div>
                             </div>
 
                             <!-- recent -->
-                            <div class="item-sidebar" id="cntr-recentsItems">
+                            <div class="item-sidebar " id="cntr-recentsItems">
                                 <div class="label-title-item-sidebar" id="cntr-recentsItems-title">Recientes</div>
                                 <div id="recentsItems"></div>
                             </div>
 
                             <!-- my travels -->
-                            <div class="item-sidebar" id="cntr-myTravels">
+                            <div class="item-sidebar " id="cntr-myTravels">
                                 <div class="label-title-item-sidebar" id="cntr-myTravels-title">Mis Viajes</div>
                                 <div id="myTravels"></div>
                             </div>
@@ -114,17 +114,17 @@ class Sidebar {
                             <div id="cntr-treeOptions">
 
                                 <!-- shared -->
-                                <div class="item-sidebar" id="shareUbi">
+                                <div class="item-sidebar btn" id="shareUbi">
                                     <div class="btn-txt-item" id="btn-txt-shareUbi">Compartir mi ubicación</div>
                                 </div>
 
                                 <!-- my markers -->
-                                <div class="item-sidebar" id="markerMyUbi">
-                                    <div class="btn-txt-item" id="btn-txt-markerMyUbi">Marcar mi ubicación</div>
+                                <div class="item-sidebar btn" id="markerMyUbi">
+                                    <div class="btn-txt-item " id="btn-txt-markerMyUbi">Marcar mi ubicación</div>
                                 </div>
 
                                 <!-- error -->
-                                <div class="item-sidebar" id="sendError">
+                                <div class="item-sidebar btn" id="sendError">
                                     <div class="btn-txt-item" id="btn-txt-sendError">Informar de un problema</div>
                                 </div>
 

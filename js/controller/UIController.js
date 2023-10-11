@@ -18,8 +18,19 @@ class UIControllers {
         this.sidebar = new Sidebar();
 
         this.#listennersMap();
-        
+
+        this.juicy();
     };
+    juicy(){
+        const boton = $('.btn');
+        boton.on('mousedown', function() {
+            $(this).css("transform", 'scale(0.95)');
+        });
+
+        boton.on('mouseup', function() {
+            $(this).css("transform", 'scale(1)');
+        });
+    }
     #html(){
         return `
             <div id="map">
@@ -164,4 +175,5 @@ class UIControllers {
             console.log("drag disabled map");
         }
     };
+
 }
