@@ -117,6 +117,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-bottom: 10px;
 }
 #cntr-sidebar {
     display: flex;
@@ -129,12 +130,15 @@ body {
 #flexing-cntr-sidebar {
     width: 76%;
     height: 67%;
-    margin-top: 6px;
+    margin-top: 20px;
     overflow-y: auto;
+}
+.label-title-item-sidebar {
+    font-weight: bold;
 }
 #favItems {
     margin-top: 7px;
-    background: #e2e2e2;
+    background: #97AFC9;
     border-radius: 5px;
     padding: 5px;
     min-height: 50px;
@@ -431,7 +435,7 @@ div#ModalView3dMaps {
 }
 #recentsItems {
     margin-top: 7px;
-    background: #e2e2e2;
+    background: #97AFC9;
     border-radius: 5px;
     padding: 5px;
     min-height: 50px;
@@ -447,7 +451,7 @@ div#ModalView3dMaps {
     cursor: pointer;
     width: 94%;
     height: 45px;
-    background: #929292;
+    background: #234163;
     color: white;
     margin-bottom: 5px;
     gap: 10px;
@@ -506,4 +510,27 @@ div#ModalView3dMaps {
 }
 #cntr-sidebar #cntr-favItems {
     background: transparent;
+}
+#cntr-treeOptions .item-sidebar {
+    background: #234163;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#cntr-sidebar #cntr-myTravels {
+    background: none;
+}
+#myTravels {
+    margin-top: 7px;
+    background: #97afc9;
+    border-radius: 5px;
+    padding: 5px;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 96%;
+    height: fit-content;
 }

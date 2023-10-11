@@ -105,21 +105,28 @@ class Sidebar {
                             </div>
 
                             <!-- my travels -->
-                            <div class="item-sidebar" id="myTravels">
-                            
+                            <div class="item-sidebar" id="cntr-myTravels">
+                                <div class="label-title-item-sidebar" id="cntr-myTravels-title">Mis Viajes</div>
+                                <div id="myTravels"></div>
                             </div>
 
                             <!-- cntr tree Options: shared, my markers, error -->
                             <div id="cntr-treeOptions">
 
                                 <!-- shared -->
-                                <div class="item-sidebar" id="shareUbi"></div>
+                                <div class="item-sidebar" id="shareUbi">
+                                    <div class="btn-txt-item" id="btn-txt-shareUbi">Compartir mi ubicación</div>
+                                </div>
 
                                 <!-- my markers -->
-                                <div class="item-sidebar" id="markerMyUbi"></div>
+                                <div class="item-sidebar" id="markerMyUbi">
+                                    <div class="btn-txt-item" id="btn-txt-markerMyUbi">Marcar mi ubicación</div>
+                                </div>
 
                                 <!-- error -->
-                                <div class="item-sidebar" id="sendError"></div>
+                                <div class="item-sidebar" id="sendError">
+                                    <div class="btn-txt-item" id="btn-txt-sendError">Informar de un problema</div>
+                                </div>
 
                             </div>
 
